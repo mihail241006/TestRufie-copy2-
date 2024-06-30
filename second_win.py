@@ -118,12 +118,9 @@ class TestWin(QWidget):
         self.setLayout(self.h_line)
     def next_click(self):
         self.hide()
-        self.exp = Experiment(self.line_age.text(),self.line_test1.text(),self.line_test2.text(),self.line_test3.text())
+        self.exp = Experiment(int(self.line_age.text()),self.line_test1.text(),self.line_test2.text(),self.line_test3.text())
         self.fw = FinalWin(self.exp)
     def set_appear(self):
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
-    def results(self):
-        self.index=(4*(int(self.exp.t1)+int(self.exp.t2)+int(self.exp.t3))-200)/10
-
